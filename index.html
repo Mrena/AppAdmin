@@ -1,0 +1,665 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title></title>
+    <link rel="stylesheet" href="css/jquery.mobile-1.2.0.css" />
+    <link rel="stylesheet" href="css/mainstyle.css" />
+	<script type="text/javascript" src="js/jquery-1.8.0.js"></script>
+	<script type="text/javascript" src="js/jquery.lightbox-0.5.js"></script>
+	<script type="text/javascript" src="js/jquery.anchor.js"></script>
+	<script type="text/javascript" src="js/Media.js"></script>
+	<script type="text/javascript" src="js/Settings.js"></script>
+	<script type="text/javascript" src="js/Populate.js"></script>
+	<script type="text/javascript" src="js/jquery.mobile-1.2.0.js"></script>
+</head>
+<body>
+
+  <div data-role="page" id="index" data-theme="a" data-title="home">
+        <div data-role="header" data-position="fixed" data-theme="a" data-id="head">
+       <ul data-role="listview">
+          <li><img src="images/code_icon-150.png" alt="logo" />
+              <h3>AppAdmin</h3>
+              <p>App management on the go.</p>
+          </li>
+       </ul>
+        </div>
+    <div data-role="content">
+        <ul data-role="listview" data-inset="true" data-theme="b">
+        <li><h3>Home</h3></li>
+        </ul>
+    
+      <ul class="ui-grid-a">
+         <li class="ui-block-a">
+             Welcome to the Admin Area of your web app.<span class="settings">You can go on and configure the app for use with your server-side script.</span>
+         </li>
+         <li class="ui-block-b">
+         	<div id="home_page_images"></div>
+         	
+         </li>
+         </ul>
+         <span class="settings">
+         <ul class="ui-grid-a">
+         <li class="ui-block-a">
+         <ul data-role="listview" data-mini="true">
+                 <li data-icon="false"><a href="#settings"><h3>Settings</h3></a></li>
+                 <li data-icon="false"><a href="#help"><h3>Help</h3></a></li>
+             </ul> 
+             </li>
+             <li class="ui-block-a"></li>
+             </ul> 
+             </span>
+             <div data-role="popup" data-overlay-theme="a" id="selectionScreen" data-theme="a">
+   
+		<ul data-role="listview" data-inset="true" data-theme="b">
+           <li><h3>Selection</h3></li>
+        </ul>
+        <p>Here you can choose whether you want to be able to change the settings later, or want to set it once and then have the settings button, and page disappear. </p>
+        <p>The <b>One Time</b> option is useful when you don't want to have your client play around with the settings, and is good for security reasons.</p>
+        <p>The <b>Changable</b> option is good for when you are managing your own or client's web app/website and you might change the page which will receive query strings, or the query strings themselves.</p>
+        <fieldset data-role="controlgroup">
+	     <legend>Choose:</legend>
+     	<input type="radio" name="selection" id="selection1" value="one" />
+     	<label for="selection1">One Time</label>
+     	<input type="radio" name="selection" id="selection2" value="changable"  />
+     	<label for="selection2">Changable</label>
+     	</fieldset>
+
+        </div>
+        
+    </div>
+    <div data-role="footer" data-theme="a" data-position="fixed" data-id="menu">
+    <div data-role="navbar">
+       <ul>
+         <li><a href="#index" data-icon="ic_view_grid" data-iconpos="top" id="home" >Home</a></li>
+         <li><a href="#messages" data-icon="ic_email" data-iconpos="top">Messages</a></li>
+         <li><a href="#stats" data-icon="ic_info" data-iconpos="top">Stats</a></li>
+         <li><a href="#manage" data-icon="ic_view_details" data-iconpos="top">Manage Content</a></li>
+       </ul>
+    </div>
+    </div>
+    </div><!-- end of #index page--> 
+    
+    <div data-role="page" id="help" data-theme="a" data-title="help">
+     <div data-role="header" data-position="fixed" data-theme="a" data-id="head">
+       <ul data-role="listview">
+          <li><img src="images/code_icon-150.png" alt="logo" />
+              <h3>AppAdmin</h3>
+              <p>App management on the go.</p>
+          </li>
+       </ul>
+        </div>
+        <div alig="left" style="text-align:left" data-role="content">
+		<ul data-role="listview" data-inset="true" data-theme="b">
+           <li><h3>Help</h3></li>
+        </ul>
+        <div data-role="collapsible-set">
+        <div data-role="collapsible">
+        <h3>Settings</h3>
+        	<p>
+        		<ul class="ui-grid-a" style="text-align:left;">
+        			<li class="ui-block-a">URL to query:</li><li class="ui-block-b">This is the URL where your server-side script is hosted.</li>
+        			<hr />
+        			<li class="ui-block-a">Page e.g url.com:</li><li class="ui-block-b">This is the page that will handle query string send for data such as messages. It should check to see if a query is valid, and then redirect the data to a method which will retrieve and return the required data.</li>
+        			<hr />
+        			<li class="ui-block-a">URL parameter name:</li><li class="ui-block-b">This is the page that will handle query string send for data such as messages. It should check to see if a query is valid, and then redirect the data to a method which will retrieve and return the required data.</li>
+        			<hr />
+        			<li class="ui-block-a">Text Fields<hr /></li><li class="ui-block-b"></li>
+        			
+        			<li class="ui-block-a">Email Address value:</li><li class="ui-block-b">When your script receives a query string with a value you assigned in this field, you should return a JSON encoded email address you want editable.</li>
+        			<hr />
+        			<li class="ui-block-a">Blog Address value:</li><li class="ui-block-b">When your script receives a query string with a value you assigned in this field, you should return a JSON encoded blog address you want editable.</li>
+        			<hr />
+        			<li class="ui-block-a">Home Summary value:</li><li class="ui-block-b">When your script receives a query string with a value you assigned in this field, you should return a JSON encoded home summary string you want editable.</li>
+        			<hr />
+        			<li class="ui-block-a">Home Page description value:</li><li class="ui-block-b">When your script receives a query string with a value you assigned in this field, you should return a JSON encoded home page description you want editable.</li>
+        			<hr />
+        			<li class="ui-block-a">About Us description value:</li><li class="ui-block-b">When your script receives a query string with a value you assigned in this field, you should return a JSON encoded about us description you want editable.</li>
+        			<hr />
+        			<li class="ui-block-a">Building No. value:</li><li class="ui-block-b">When your script receives a query string with a value you assigned in this field, you should return a JSON encoded building number of the company or person's address you want editable.</li>
+        			<hr />
+        			<li class="ui-block-a">City value:</li><li class="ui-block-b">When your script receives a query string with a value you assigned in this field, you should return a JSON encoded city of the company or person's you want editable.</li>
+        			<hr />
+        			<li class="ui-block-a">Country value:</li><li class="ui-block-b">When your script receives a query string with a value you assigned in this field, you should return a JSON encoded country of the company or person's you want editable.</li>
+        			<hr />
+        			<li class="ui-block-a">Logo value:</li><li class="ui-block-b">When your script receives a query string with a value you assigned in this field, you should return a JSON encoded path of the logo you want editable.</li>
+        			<hr />
+        			<li class="ui-block-a">Messages value:</li><li class="ui-block-b">When your script receives a query string with a value you assigned in this field, you should return a JSON encoded array of objects with fields 'Message_m' which should contain a message, 'message_id' which should the message's id and 'From_user' which should contain the email address of the person the message is from you want editable.</li>
+        			<hr />
+        			<li class="ui-block-a">Audio value:</li><li class="ui-block-b">When your script receives a query string with a value you assigned in this field, you should return a JSON encoded array which contains paths to the audio you want editable.</li>
+        			<hr />
+        			<li class="ui-block-a">Photos value:</li><li class="ui-block-b">When your script receives a query string with a value you assigned in this field, you should return a JSON encoded array which contains paths to the photos you want editable.</li>
+        			<hr />
+        			<li class="ui-block-a">Videos value:</li><li class="ui-block-b">When your script receives a query string with a value you assigned in this field, you should return a JSON encoded array which contains paths to the videos you want editable.</li>
+        			<hr />
+        			<li class="ui-block-a">Stats value:</li><li class="ui-block-b">When your script receives a query string with a value you assigned in this field, you should return a JSON encoded array who's first index contains an array which contains the number of visits to the app or website in the first index of the array, and the number of unique visits as the second index you want editable. The second index should contain an object which has a name of the country as field, and the statistics as a value.</li>
+        	   	</ul>	 
+        	</p>
+        </div>
+        <div data-role="collapsible">
+        	<h3>Actions</h3>
+        	<p><ul class="ui-grid-a" style="text-align:left;">
+        			<li class="ui-block-a">Editing Text:</li><li class="ui-block-b">When a user edits any of the text fields in the text management section, and tap save. Your server-side script will recieve a query string who's name is the one you assigned to the parameter name field. The query string's value will be 'update_text', and along with it will be query strings who's name is the same as the ones you assigned in the Text field section of the Settings. These query strings will contain the updated text.</li>
+        			<hr />
+        			<li class="ui-block-a">Replying to a message:</li><li class="ui-block-b">When a user replies to a message, your server-side script will recieve a query string who's name is the one you assigned to the parameter name field. The query string's value will be 'message_reply', and along with it will be query strings who's name is reply_message and email_address, and they will contain the reply message and email address of the initial message send, respectively.</li>
+        			<hr />
+        			<li class="ui-block-a">Deleting a message:</li><li class="ui-block-b">When a user deletes a message, your server-side script will recieve a query string who's name is the one you assigned to the parameter name field. The query string's value will be 'delete_message', and along with it will be query strings who's name is 'message_id' which will contain the message id of the message to be deleted.</li>
+        			<hr />
+        			<li class="ui-block-a">Deleting a single audio:</li><li class="ui-block-b">When a user deletes an audio, your server-side script will recieve a query string who's name is the one you assigned to the parameter name field. The query string's value will be 'delete_audio', and along with it will be query strings who's name is 'audio_path' which will contain the path of the audio to be deleted.</li>
+        			<hr />
+        			<li class="ui-block-a">Deleting an image:</li><li class="ui-block-b">When a user deletes an image, your server-side script will recieve a query string who's name is the one you assigned to the parameter name field. The query string's value will be 'delete_image', and along with it will be query strings who's name is 'image_path' which will contain the path of the audio to be deleted.</li>
+        			<hr />
+        			<li class="ui-block-a">Uploading an image:</li><li class="ui-block-b">When a user uploads an image, your server-side script will recieve a query string who's name is the one you assigned to the parameter name field. The query string's value will be 'upload_images', and if you are using PHP as you server-side script, the images will be in $_FILES['images'].</li>
+        			<hr />
+        			<li class="ui-block-a">Deleting a video:</li><li class="ui-block-b">When a user deletes an video, your server-side script will recieve a query string who's name is the one you assigned to the parameter name field. The query string's value will be 'delete_video', and along with it will be query strings who's name is 'video_path' which will contain the path of the audio to be deleted.</li>
+        	   	</ul>	
+        	</p>
+        </div>
+        <div data-role="collapsible">
+        <h3>More</h3>
+        <p>A fully working sample PHP script for integrating with this application is available as a virtual good.</p>
+        </div>
+        </div>
+        </div>
+       <div data-role="footer" data-theme="a" data-position="fixed" data-id="menu">
+    <div data-role="navbar">
+       <ul>
+         <li><a href="#" data-rel="back" data-icon="back" data-iconpos="top" id="back" >Back</a></li>
+         
+       </ul>
+    </div>
+    </div>
+    </div> <!-- end of page #messages -->
+    
+   
+       <!-- start of page #messages -->
+   <div data-role="page" id="messages" data-theme="a" data-title="settings">
+     <div data-role="header" data-position="fixed" data-theme="a" data-id="head">
+       <ul data-role="listview">
+          <li><img src="images/code_icon-150.png" alt="logo" />
+              <h3>AppAdmin</h3>
+              <p>App management on the go.</p>
+          </li>
+       </ul>
+        </div>
+        <div alig="left" style="text-align:left" data-role="content">
+		<ul data-role="listview" data-inset="true" data-theme="b">
+           <li><h3>Messages</h3></li>
+        </ul>
+        <div>Tap a message you want to read.</div>
+        <ul id="messages_container" data-role="listview" data-inset="true">
+        
+        </ul>
+        </div>
+       <div data-role="footer" data-theme="a" data-position="fixed" data-id="menu">
+    <div data-role="navbar">
+       <ul>
+         <li><a href="#index" data-icon="ic_view_grid" data-iconpos="top" id="home" >Home</a></li>
+         <li><a href="#messages" data-icon="ic_email" data-iconpos="top">Messages</a></li>
+         <li><a href="#stats" data-icon="ic_info" data-iconpos="top">Stats</a></li>
+         <li><a href="#manage" data-icon="ic_view_details" data-iconpos="top">Manage Content</a></li>
+       </ul>
+    </div>
+    </div>
+    </div> <!-- end of page #messages -->
+    
+    
+       <!-- start of page #read_message -->
+   <div data-role="page" id="read_message" data-theme="a" data-title="settings">
+     <div data-role="header" data-position="fixed" data-theme="a" data-id="head">
+       <ul data-role="listview">
+          <li><img src="images/code_icon-150.png" alt="logo" />
+              <h3>AppAdmin</h3>
+              <p>App management on the go.</p>
+          </li>
+       </ul>
+        </div>
+        <div alig="left" style="text-align:left" data-role="content">
+		<ul data-role="listview" data-inset="true" data-theme="b">
+           <li><h3>Read Message</h3></li>
+        </ul>
+        <p id="message"></p>
+        <div>
+        <textarea id="reply_message"></textarea></li>
+       <ul class="ui-grid-a">
+        <li class="ui-block-a"><a href="#" data-role="button" data-inset="true" data-icon="false" id="send_message" >Reply</a></li>
+        <li class="ui-block-b"><a href="#" data-role="button" data-inset="true" data-icon="false" id="delete_message">Delete</a></li>
+        </ul>
+        
+        </div>
+        
+        </div>
+       <div data-role="footer" data-theme="a" data-position="fixed" data-id="menu">
+    <div data-role="navbar">
+       <ul>
+         <li><a href="#index" data-icon="ic_view_grid" data-iconpos="top" id="home" >Home</a></li>
+         <li><a href="#messages" data-icon="ic_email" data-iconpos="top">Messages</a></li>
+         <li><a href="#stats" data-icon="ic_info" data-iconpos="top">Stats</a></li>
+         <li><a href="#manage" data-icon="ic_view_details" data-iconpos="top">Manage Content</a></li>
+       </ul>
+    </div>
+    </div>
+    </div> <!-- end of page #read_message -->
+    
+   <div data-role="page" id="stats" data-theme="a">
+     <div data-role="header" data-position="fixed" data-theme="a" data-id="head">
+       <ul data-role="listview">
+          <li><img src="images/code_icon-150.png" alt="logo" />
+              <h3>AppAdmin</h3>
+              <p>App management on the go.</p>
+          </li>
+       </ul>
+        </div>
+        <div data-role="content">
+           <ul data-role="listview" data-inset="true" data-theme="b">
+           <li><h3>Statistics</h3></li>
+        </ul>
+        <!-- chart will go here -->
+        <!--  <div align="center" id="chartNode" style="width: 550px; height: 550px;"></div> -->
+        <h3>Visits</h3>
+        <div id="visits" style="display:block;background:yellow"></div>
+        <div id="unique_visits" style="display:block;background:green"></div>
+        <div id="monthly_visits" style="display:block;background:red"></div>
+        <hr />
+        <h3>Country Visits</h3>
+        <div id="country_visits" style="display:block;background:orange"></div>
+         
+        </div>
+        <div data-role="footer" data-theme="a" data-position="fixed" data-id="menu">
+    <div data-role="navbar">
+       <ul>
+         <li><a href="#index" data-icon="ic_view_grid" data-iconpos="top" id="home" >Home</a></li>
+         <li><a href="#messages" data-icon="ic_email" data-iconpos="top">Messages</a></li>
+         <li><a href="#stats" data-icon="ic_info" data-iconpos="top">Stats</a></li>
+         <li><a href="#manage" data-icon="ic_view_details" data-iconpos="top">Manage Content</a></li>
+       </ul>
+    </div>
+    </div>
+    </div><!-- end of page #stats -->
+    
+    <div data-role="page" id="manage" data-theme="a">
+     <div data-role="header" data-position="fixed" data-theme="a" data-id="head">
+       <ul data-role="listview">
+          <li><img src="images/code_icon-150.png" alt="logo" />
+              <h3>AppAdmin</h3>
+              <p>App management on the go.</p>
+          </li>
+       </ul>
+        </div>
+        <div data-role="content"   data-theme="a">
+        <ul data-role="listview" data-inset="true" data-theme="b">
+           <li><h3>Manage Content</h3></li>
+        </ul>
+        <ul data-role="listview" data-inset="true">
+        <li data-icon="false"><a href="#managetext">Text</a></li>
+        <li data-icon="false"><a href="#manageaudio">Audio</a></li>
+        <li data-icon="false"><a href="#managephotos">Photos</a></li>
+        <li data-icon="false"><a href="#managevideos">Videos</a></li>
+        </ul>
+        </div>
+        <div data-role="footer" data-theme="a" data-position="fixed" data-id="menu">
+    <div data-role="navbar">
+       <ul>
+         <li><a href="#index" data-icon="ic_view_grid" data-iconpos="top" id="home" >Home</a></li>
+         <li><a href="#messages" data-icon="ic_email" data-iconpos="top">Messages</a></li>
+         <li><a href="#stats" data-icon="ic_info" data-iconpos="top">Stats</a></li>
+         <li><a href="#manage" data-icon="ic_view_details" data-iconpos="top">Manage Content</a></li>
+       </ul>
+    </div>
+    </div>
+    </div> <!-- end of page #managephotos -->
+    
+    <div data-role="page" id="managephotos" data-theme="a">
+     <div data-role="header" data-position="fixed" data-theme="a" data-id="head">
+       <ul data-role="listview">
+          <li><img src="images/code_icon-150.png" alt="logo" />
+              <h3>AppAdmin</h3>
+              <p>App management on the go.</p>
+          </li>
+       </ul>
+        </div>
+        <div data-role="content"   data-theme="a">
+        <ul data-role="listview" data-inset="true" data-theme="b">
+           <li><h3>Manage Photos</h3></li>
+        </ul>
+        <p>Tap an image to delete it.</p>
+      <a href="#upload_photos" data-role="button">Upload Photos</a> 
+        <div id="photos">
+        
+        
+        
+        </div>
+        </div>
+        <div data-role="footer" data-theme="a" data-position="fixed" data-id="menu">
+    <div data-role="navbar">
+       <ul>
+         <li><a href="#index" data-icon="ic_view_grid" data-iconpos="top" id="home" >Home</a></li>
+         <li><a href="#messages" data-icon="ic_email" data-iconpos="top">Messages</a></li>
+         <li><a href="#stats" data-icon="ic_info" data-iconpos="top">Stats</a></li>
+         <li><a href="#manage" data-icon="ic_view_details" data-iconpos="top">Manage Content</a></li>
+       </ul>
+    </div>
+    </div>
+    </div> <!-- end of page #managephotos -->
+    
+    
+    
+    <div data-role="page" id="upload_photos" data-theme="a">
+     <div data-role="header" data-position="fixed" data-theme="a" data-id="head">
+       <ul data-role="listview">
+          <li><img src="images/code_icon-150.png" alt="logo" />
+              <h3>AppAdmin</h3>
+              <p>App management on the go.</p>
+          </li>
+       </ul>
+        </div>
+        <div data-role="content" data-theme="a">
+        <ul data-role="listview" data-inset="true" data-theme="b">
+           <li><h3>Upload Photos</h3></li>
+        </ul>
+		<form method="post" id="photo_upload_form" enctype="multipart/form-data">
+    		<input type="file" name="images" id="images" multiple />
+    		 <a href="a" data-role="button" id="btn">Upload</a>
+    	</form>
+  	<div id="response"></div>
+		<ul id="image-list">
+
+		</ul>
+        </div>
+        <div data-role="footer" data-theme="a" data-position="fixed" data-id="menu">
+    <div data-role="navbar">
+       <ul>
+         <li><a href="#index" data-icon="ic_view_grid" data-iconpos="top" id="home" >Home</a></li>
+         <li><a href="#messages" data-icon="ic_email" data-iconpos="top">Messages</a></li>
+         <li><a href="#stats" data-icon="ic_info" data-iconpos="top">Stats</a></li>
+         <li><a href="#manage" data-icon="ic_view_details" data-iconpos="top">Manage Content</a></li>
+       </ul>
+    </div>
+    </div>
+    </div> <!-- end of page #upload_photos -->
+    
+    <div data-role="page" id="managetext" data-theme="a">
+     <div data-role="header" data-position="fixed" data-theme="a" data-id="head">
+       <ul data-role="listview">
+          <li><img src="images/code_icon-150.png" alt="logo" />
+              <h3>AppAdmin</h3>
+              <p>App management on the go.</p>
+          </li>
+       </ul>
+        </div>
+        <div data-role="content"   data-theme="a">
+        <ul data-role="listview" data-inset="true" data-theme="b">
+           <li><h3>Manage Text</h3></li>
+        </ul>
+        <ul data-role="listview">
+        <form id="website_textForm" method="GET">
+        	<li><label for="home_descr_update">Home Page Description:</label>
+        		<input type="text" id="home_descr_update" name="home_descr_update" />
+        	</li>
+        	<li><label for="home_summary_update">Home Summary Description:</label>
+        		<input type="text" id="home_summary_update" name="home_summary_update" />
+        	</li>
+        	<li><label for="about_descr_update">About Page Description:</label>
+        		<input type="text" id="about_descr_update" name="about_descr_update" />
+        	</li>
+        	<li><label for="email_update">Email Address:</label>
+        		<input type="text" id="email_update" name="email_update" />
+        	</li>
+        	<li><label for="blog_address_update">Blog Address:</label>
+        		<input type="text" id="blog_address_update" name="blog_address_update" />
+        	</li>
+        	<li><label for="building_no_update">Building No.:</label>
+        		<input type="text" id="building_no_update" name="building_no_update" />
+        	</li>
+        	<li><label for="city_update">City:</label>
+        		<input type="text" id="city_update" name="city_update" />
+        	</li>
+        	<li><label for="country_update">Country:</label>
+        		<input type="text" id="country_update" name="country_update" />
+        	</li>
+        		<a href="#" data-role="button" id="update_text" name="update_text">Update Text</a>
+        	</li>
+        	</form>
+        </ul> 
+        </div>
+        <div data-role="footer" data-theme="a" data-position="fixed" data-id="menu">
+    <div data-role="navbar">
+       <ul>
+         <li><a href="#index" data-icon="ic_view_grid" data-iconpos="top" id="home" >Home</a></li>
+         <li><a href="#messages" data-icon="ic_email" data-iconpos="top">Messages</a></li>
+         <li><a href="#stats" data-icon="ic_info" data-iconpos="top">Stats</a></li>
+         <li><a href="#manage" data-icon="ic_view_details" data-iconpos="top">Manage Content</a></li>
+       </ul>
+    </div>
+    </div>
+    </div> <!-- end of page #managetext -->
+    
+    
+    <div data-role="page" id="manageaudio" data-theme="a">
+     <div data-role="header" data-position="fixed" data-theme="a" data-id="head">
+       <ul data-role="listview">
+          <li><img src="images/code_icon-150.png" alt="logo" />
+              <h3>AppAdmin</h3>
+              <p>App management on the go.</p>
+          </li>
+       </ul>
+        </div>
+        <div data-role="content"   data-theme="a">
+        <ul data-role="listview" data-inset="true" data-theme="b">
+           <li><h3>Manage Audio</h3></li>
+        </ul>
+         <!-- <a href="#upload_audio" data-role="button">Upload Audio</a>--> 
+        <div id="audio"></div>
+        </div>
+        <div data-role="footer" data-theme="a" data-position="fixed" data-id="menu">
+    <div data-role="navbar">
+       <ul>
+         <li><a href="#index" data-icon="ic_view_grid" data-iconpos="top" id="home" >Home</a></li>
+         <li><a href="#messages" data-icon="ic_email" data-iconpos="top">Messages</a></li>
+         <li><a href="#stats" data-icon="ic_info" data-iconpos="top">Stats</a></li>
+         <li><a href="#manage" data-icon="ic_view_details" data-iconpos="top">Manage Content</a></li>
+       </ul>
+    </div>
+    </div>
+    </div> <!-- end of page #manageaudio -->
+    
+    <div data-role="page" id="upload_audio" data-theme="a">
+     <div data-role="header" data-position="fixed" data-theme="a" data-id="head">
+       <ul data-role="listview">
+          <li><img src="images/code_icon-150.png" alt="logo" />
+              <h3>AppAdmin</h3>
+              <p>App management on the go.</p>
+          </li>
+       </ul>
+        </div>
+        <div data-role="content" data-theme="a">
+        <ul data-role="listview" data-inset="true" data-theme="b">
+           <li><h3>Upload Audio</h3></li>
+        </ul>
+		<form method="post" id="photo_upload_form" enctype="multipart/form-data">
+    		<input type="file" name="audio_files" id="audio_files" multiple />
+    		 <a href="a" data-role="button" id="btnAudio_upload">Upload</a>
+    	</form>
+  	<div id="audio_response"></div>
+		<ul id="audio-list">
+
+		</ul>
+        </div>
+        <div data-role="footer" data-theme="a" data-position="fixed" data-id="menu">
+    <div data-role="navbar">
+       <ul>
+         <li><a href="#index" data-icon="ic_view_grid" data-iconpos="top" id="home" >Home</a></li>
+         <li><a href="#messages" data-icon="ic_email" data-iconpos="top">Messages</a></li>
+         <li><a href="#stats" data-icon="ic_info" data-iconpos="top">Stats</a></li>
+         <li><a href="#manage" data-icon="ic_view_details" data-iconpos="top">Manage Content</a></li>
+       </ul>
+    </div>
+    </div>
+    </div> <!-- end of page #upload_audio -->
+    
+    
+    <div data-role="page" id="managevideos" data-theme="a">
+     <div data-role="header" data-position="fixed" data-theme="a" data-id="head">
+       <ul data-role="listview">
+          <li><img src="images/code_icon-150.png" alt="logo" />
+              <h3>AppAdmin</h3>
+              <p>App management on the go.</p>
+          </li>
+       </ul>
+        </div>
+        <div data-role="content" data-theme="a">
+        <ul data-role="listview" data-inset="true" data-theme="b">
+           <li><h3>Manage Videos</h3></li>
+        </ul>
+        <!-- <a href="#upload_video" data-role="button">Upload Video</a>-->
+        <div id="videos">
+       
+        
+        </div>
+        </div>
+        <div data-role="footer" data-theme="a" data-position="fixed" data-id="menu">
+    <div data-role="navbar">
+       <ul>
+         <li><a href="#index" data-icon="ic_view_grid" data-iconpos="top" id="home" >Home</a></li>
+         <li><a href="#messages" data-icon="ic_email" data-iconpos="top">Messages</a></li>
+         <li><a href="#stats" data-icon="ic_info" data-iconpos="top">Stats</a></li>
+         <li><a href="#manage" data-icon="ic_view_details" data-iconpos="top">Manage Content</a></li>
+       </ul>
+    </div>
+    </div>
+    </div> <!-- end of page #managevideos -->
+    
+    <div data-role="page" id="upload_video" data-theme="a">
+     <div data-role="header" data-position="fixed" data-theme="a" data-id="head">
+       <ul data-role="listview">
+          <li><img src="images/code_icon-150.png" alt="logo" />
+              <h3>AppAdmin</h3>
+              <p>App management on the go.</p>
+          </li>
+       </ul>
+        </div>
+        <div data-role="content" data-theme="a">
+        <ul data-role="listview" data-inset="true" data-theme="b">
+           <li><h3>Upload Video</h3></li>
+        </ul>
+		<form method="post" id="photo_upload_form" enctype="multipart/form-data">
+    		<input type="file" name="video_files" id="video_files" multiple />
+    		 <a href="a" data-role="button" id="btnVideo_upload">Upload</a>
+    	</form>
+  	<div id="video_response"></div>
+		<ul id="video-list">
+
+		</ul>
+        </div>
+        <div data-role="footer" data-theme="a" data-position="fixed" data-id="menu">
+    <div data-role="navbar">
+       <ul>
+         <li><a href="#index" data-icon="ic_view_grid" data-iconpos="top" id="home" >Home</a></li>
+         <li><a href="#messages" data-icon="ic_email" data-iconpos="top">Messages</a></li>
+         <li><a href="#stats" data-icon="ic_info" data-iconpos="top">Stats</a></li>
+         <li><a href="#manage" data-icon="ic_view_details" data-iconpos="top">Manage Content</a></li>
+       </ul>
+    </div>
+    </div>
+    </div> <!-- end of page #upload_video -->
+    
+    
+    
+    <div data-role="page" id="settings" data-theme="a">
+     <div data-role="header" data-position="fixed" data-theme="a" data-id="head">
+       <ul data-role="listview">
+          <li><img src="images/code_icon-150.png" alt="logo" />
+              <h3>AppAdmin</h3>
+              <p>App management on the go.</p>
+          </li>
+       </ul>
+        </div>
+        <div data-role="content"   data-theme="a">
+        <ul data-role="listview" data-inset="true" data-theme="b">
+           <li><h3>Settings</h3></li>
+        </ul>
+        <p>You can edit only what is applicable to your web application or needs.</p>
+        <ul data-role="listview" data-inset="true">
+        <li><label for="url">URL to query e.g <b style="color:red">url.com</b>/page.php?contentType=value:</label>
+            <input type="text" id="url" name="url"  />
+        </li>
+        <li><label for="page">Page e.g url.com<b style="color:red">/page.php</b>?contentType=value:</label>
+            <input type="text" id="page" name="page"  />
+        </li>
+        <li><label for="parameter">URL parameter name e.g url.com/page.php?<b style="color:red">contentType</b>=value:</label>
+            <input type="text" id="parameter" name="parameter" />
+        </li>
+        <li>
+        <h3>Text Fields</h3>
+        <p> e.g url.com?contentType=<b style="color:red">value</b>:</p>
+        	<ul data-theme="a">
+        		<li>
+        		   <label for="emailVal">Email Address value:</label>
+                   <input type="text" id="emailVal" name="emailVal" />
+                </li>
+                <li>
+        		   <label for="blog_addressVal">Blog Address value:</label>
+                   <input type="text" id="blog_addressVal" name="blog_addressVal" />
+                </li>
+                <li>
+        		   <label for="home_summaryVal">Home Summary value:</label>
+                   <input type="text" id="home_summaryVal" name="home_summaryVal" />
+                </li>
+                <li>
+        		   <label for="home_descrVal">Home Page description value:</label>
+                   <input type="text" id="home_descrVal" name="home_descrVal" />
+                </li>
+                <li>
+        		   <label for="about_descrVal">About Us description value:</label>
+                   <input type="text" id="about_descrVal" name="about_descrVal" />
+                </li>
+                <ul data-role="listview">
+                <li><h3>Address:</h3></li>
+                <li>
+        		   <label for="building_noVal">Building No. value:</label>
+                   <input type="text" id="building_noVal" name="building_noVal" />
+                </li>
+                <li>
+        		   <label for="cityVal">City value:</label>
+                   <input type="text" id="cityVal" name="cityVal" />
+                </li>
+                <li>
+        		   <label for="countryVal">Country value:</label>
+                   <input type="text" id="countryVal" name="countryVal" />
+                </li>
+                </ul>
+              <li data-icon="false"><a href="#" data-rel="back" id="continueSettings" name="continueSettings">Continue</a></li>
+        	</ul>
+        </li>
+        <li><label for="logoVal">Logo value:</label>
+            <input type="text" id="logoVal" name="logoVal" />
+        </li>
+        <li><label for="messagesVal">Messages value:</label>
+            <input type="text" id="messagesVal" name="messagesVal" />
+        </li>
+        <li><label for="audioVal">Audio value:</label>
+            <input type="text" id="audioVal" name="audioVal" />
+        </li>
+        <li><label for="photosVal">Photos value:</label>
+            <input type="text" id="photosVal" name="photosVal" />
+        </li>
+        <li><label for="videosVal">Videos value:</label>
+            <input type="text" id="videosVal" name="videosVal" />
+        </li>
+        <li><label for="statsVal">Stats value:</label>
+            <input type="text" id="statsVal" name="statsVal" />
+        </li>
+        <li data-icon="false">
+            <a href="#" id="saveSettings" name="saveSettings">Save</a>
+        </li>
+        
+        </ul>
+        </div>
+        <div data-role="footer" data-theme="a" data-position="fixed" data-id="menu">
+    </div>
+    </div> <!-- end of page #managevideos -->
+    
+    <script type="text/javascript" src="js/ContentInitializer.js"></script>
+    <script type="text/javascript" src="js/logic.js"></script>
+    <script type="text/javascript" src="js/upload.js"></script>
+</body>
+</html>
